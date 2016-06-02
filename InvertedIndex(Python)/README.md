@@ -42,7 +42,8 @@ def openAndProcessingFiles(path,resultDict):  # Main Function
         
         stop_words = set(stopwords.words('english'))
         
-        stop_words.update(['texthtml', 'html', 'server', "email", 'date']) # remove it if you need punctuation and add new remove words
+        stop_words.update(['texthtml', 'html', 'server', "email", 'date', 'info']) 
+        # By analying the previous result set, continully adding new stopwords words
     
         textAfterStopwordsRemovingList = [word for word in textRemoveingUnnecessaryCharactersList if word not in stop_words] #remove stopwords
 
