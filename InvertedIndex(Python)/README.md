@@ -285,6 +285,8 @@ meet    (60),
 * There are totally 5251 words be identified.
 #### How many words appear in both the training set and the test set How many do not? 
 * Appear in both: 3027 Not appear in one doc: 4618.
+
+
 #### References
 Python stopwords removing 
 (http://stackoverflow.com/questions/5486337/how-to-remove-stop-words-using-nltk-or-python)
