@@ -289,7 +289,7 @@ environ    (58),
 
 
 #### Example words that are not properly cleaned, e.g. sle"), il'-10, etc. Why were they difficult to get properly preprocessed? 
-* Not found. Because special characters are removed.
+* Not found. Because words contain special characters are removed. Those words are meaningless.
 
 #### How many words are identified from the test set?
 * There are totally 5251 words be identified.
