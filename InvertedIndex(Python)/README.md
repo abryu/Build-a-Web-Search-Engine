@@ -1,4 +1,4 @@
-# Implementing a Web Indexer (Python)
+# Implementing a Web Parser (Python)
 
 ## Requirements:
  * Preprocess the web page documents provided to select relevant terms to represent these documents.   
