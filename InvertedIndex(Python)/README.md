@@ -1,7 +1,7 @@
 # Implementing a Web Indexer (Python)
 
 ## Requirements:
- * Preprocess the web page documents provided to select relevant terms to represent these documents.   *
+ * Preprocess the web page documents provided to select relevant terms to represent these documents.   
  * All html tags should be cleaned, stop words be removed, and stemming be performed. 
 
 ## Libraries and APIs used:
@@ -69,7 +69,7 @@ def formatAndPrintResultDict(resultDict,destFile,rFile):
     rFile.write('There are totally '+str(count)+' words be identified.\n')
     return resultList
 ```
-### Calculate words exist in both set and only appear in one set
+### Calculate words exist in both set and only appear in one set. 
 ```python
 def calculateWordsAppearInBothSetOrNot(r1,r2):
     s1 = set([(eachTuple[0]) for eachTuple in r1])
