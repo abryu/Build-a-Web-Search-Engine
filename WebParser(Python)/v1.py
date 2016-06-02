@@ -70,7 +70,7 @@ def openAndProcessingFiles(path,resultDict):  # Main Function
         
         stop_words = set(stopwords.words('english'))
         
-        stop_words.update(['texthtml', 'html', 'server', "email", 'date', 'gmt']) # By analying the previous result set, continully adding new stopwords
+        stop_words.update(['texthtml', 'html', 'server', "email", 'date', 'gmt', 'www']) # By analying the previous result set, continully adding new stopwords
     
         textAfterStopwordsRemovingList = [word for word in textRemoveingUnnecessaryCharactersList if word not in stop_words] #remove stopwords
 

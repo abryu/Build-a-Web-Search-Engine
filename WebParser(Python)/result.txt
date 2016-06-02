@@ -159,7 +159,6 @@ place    (67),
 set    (66),
 technolog    (66),
 look    (66),
-www    (66),
 box    (66),
 artifici    (66),
 first    (66),
@@ -198,8 +197,9 @@ exampl    (57),
 scheme    (57),
 info    (57),
 make    (57),
+messag    (57),
 Above is the top 200 most frequent words
-There are totally 7477 words be identified.
+There are totally 7476 words be identified.
 comput    (625),
 system    (369),
 page    (361),
@@ -401,5 +401,5 @@ eicken    (31),
 practic    (31),
 nation    (31),
 Above is the top 200 most frequent words
-There are totally 5133 words be identified.
-Appear in both: 2938 Not appear in one doc: 4538
+There are totally 5132 words be identified.
+Appear in both: 2937 Not appear in one doc: 4538
