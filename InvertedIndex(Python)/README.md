@@ -94,7 +94,7 @@ def calculateWordsAppearInBothSetOrNot(r1,r2):
 ## Any problems I have encountered and solved, and lessons I have learned
 * Conversion between various data structures (List/Dictionary/Set)
 * Get cleaner result (Solved by analyzing the words appear in previous result and then clean the unreasonable words)
-* The order of processing procedure will affect the result.
+* The order of processing procedures will affect the result.
 ## Results:
 
 ### How many words are identified from the training set
