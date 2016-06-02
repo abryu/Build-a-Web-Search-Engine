@@ -117,8 +117,10 @@ def calculateWordsAppearInBothSetOrNot(r1,r2):
 ### How many words are identified from the training set
 * There are totally 7646 words be identified in the training set.
 
-### Present and discuss top 200 most frequent words identified
+### Present and discuss top 200 most frequent words identified:
+
 For Training Set:
+
 comput    (1116),
 page    (812),
 scienc    (726),
@@ -320,7 +322,9 @@ info    (57),
 make    (57),
 messag    (57),
 
+
 For Test Set:
+
 comput    (625),
 system    (369),
 page    (361),
