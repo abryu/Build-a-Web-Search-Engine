@@ -309,3 +309,6 @@ os
 
 re
 (https://docs.python.org/2/library/re.html)
+
+dictionary sorting
+(http://stackoverflow.com/questions/72899/how-do-i-sort-a-list-of-dictionaries-by-values-of-the-dictionary-in-python)
