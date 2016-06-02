@@ -530,7 +530,7 @@ practic    (31),
 #### How many words appear in both the training set and the test set How many do not? 
 * Appear in both: 3027 Not appear in one doc: 4618.
 
-#### Detailed result please check 
+#### Detailed result please check (create a new local html file, copy the code to your html file and open it with a browser)
 (https://github.com/abryu/Build-a-Web-Search-Engine/blob/master/WebParser(Python)/result.txt) 
 (https://github.com/abryu/Build-a-Web-Search-Engine/blob/master/WebParser(Python)/destinationTestFile.html)
 (https://github.com/abryu/Build-a-Web-Search-Engine/blob/master/WebParser(Python)/destinationTrainingFile.html)
