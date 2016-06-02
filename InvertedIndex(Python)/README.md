@@ -24,48 +24,62 @@
 
 ### Removing html tags, words on the stop list, stemming, and any special handlings for better results
 ```python
-    currentTextString = " ".join(thisFile.read().split())
-    #store the file as a string for removing HTML tags
-        
-    textAfterHtmlRemovingString = re.sub('<[^>]*>', '', currentTextString) 
-    # remove HTML tags (String)
-        
-    textAfterHtmlRemovingList = textAfterHtmlRemovingString.split() 
-    # convert String to List for the text contains only characters
-        
-    textRemoveingUnnecessaryCharactersList = \
-    [removeUnnecessaryCharacters(word) for word in textAfterHtmlRemovingList ] 
+def openAndProcessingFiles(path,resultDict):  # Main Function
 
-    textRemoveingUnnecessaryCharactersList = \
-    [word for word in textRemoveingUnnecessaryCharactersList if word is not None]
+    for filename in os.listdir(os.getcwd()+path):
+
+        thisFile = open(os.getcwd()+path+'/'+filename,'r') #open the file and process each file
+        
+        currentTextString = " ".join(thisFile.read().split())#store the file as a string for removing HTML tags
+        
+        textAfterHtmlRemovingString = re.sub('<[^>]*>', '', currentTextString) # remove HTML tags (String)
+        
+        textAfterHtmlRemovingList = textAfterHtmlRemovingString.split() # convert String to List for the text contains only characters
+        
+        textRemoveingUnnecessaryCharactersList = [removeUnnecessaryCharacters(word) for word in textAfterHtmlRemovingList ] 
+
+        textRemoveingUnnecessaryCharactersList = [word for word in textRemoveingUnnecessaryCharactersList if word is not None]
+        
+        stop_words = set(stopwords.words('english'))
+        
+        stop_words.update(['texthtml', 'html', 'server', "email", 'date']) # remove it if you need punctuation and add new remove words
     
-    textAfterStopwordsRemovingList = \
-    [word for word in textRemoveingUnnecessaryCharactersList if word not in \
-    stopwords.words('english')] #remove stopwords
+        textAfterStopwordsRemovingList = [word for word in textRemoveingUnnecessaryCharactersList if word not in stop_words] #remove stopwords
 
-    stemmer = PorterStemmer() #stemming
+        stemmer = PorterStemmer() #stemming
         
-    for eachWord in textAfterStopwordsRemovingList:
-        eachWord = stemmer.stem(eachWord)
-        storeToResultDict(eachWord,resultDict)
+        for eachWord in textAfterStopwordsRemovingList:
+            eachWord = stemmer.stem(eachWord)
+            storeToResultDict(eachWord,resultDict)
+    
+        thisFile.close()
+```
+### Remove special characters
+```python
+def removeUnnecessaryCharacters(word):
+    if '@' in word or 'www' in word: # eliminate email addresses and website addresses
+        return None
+    newWord = "".join(re.findall("[a-zA-Z]+", word)).lower() # contain only characters
+    if len(newWord) > 2 and len(newWord) < 15:            
+        return newWord
+    else:
+        return None
 ```
 ### Sort and display dictionaries
 ```python
 def formatAndPrintResultDict(resultDict,destFile,rFile):
-    resultList = \
-    sorted(resultDict.iteritems(), key=lambda frequency:frequency[1], reverse = True) 
-    # sort the dict based on the value (frequency)
+    resultList= sorted(resultDict.iteritems(), key=lambda frequency:frequency[1], reverse = True) # sort the dict based on the value (frequency)
     count = 1    
     for eachTuple in resultList:
         destFile.write('<tr><td>'+eachTuple[0]+'</td><td>'+str(eachTuple[1])+'</td></tr>')
         if count <= 200:
-            rFile.write(eachTuple[0]+'    '+str(eachTuple[1])+'\n')
+            rFile.write(eachTuple[0]+'    ('+str(eachTuple[1])+'),\n')
         if count == 200:
             destFile.write('<tr><td>Above is the top 200 most frequent words</td></tr>')
             rFile.write('Above is the top 200 most frequent words\n')
         count = count + 1
-    destFile.write \
-    ('<tr><td>There are totally '+str(count)+' words be identified</td></tr>')
+        
+    destFile.write('<tr><td>There are totally '+str(count)+' words be identified</td></tr>')
     rFile.write('There are totally '+str(count)+' words be identified.\n')
     return resultList
 ```
