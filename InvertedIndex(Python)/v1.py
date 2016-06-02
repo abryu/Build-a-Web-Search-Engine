@@ -25,7 +25,7 @@ def removeUnnecessaryCharacters(word):
     if '@' in word or 'www' in word: # eliminate email addresses and website addresses
         return None
     newWord = "".join(re.findall("[a-zA-Z]+", word)).lower() # contain only characters
-    if len(newWord) > 2 and len(newWord) < 15:
+    if len(newWord) > 2 and len(newWord) < 15:            
         return newWord
     else:
         return None
@@ -67,8 +67,12 @@ def openAndProcessingFiles(path,resultDict):  # Main Function
         textRemoveingUnnecessaryCharactersList = [removeUnnecessaryCharacters(word) for word in textAfterHtmlRemovingList ] 
 
         textRemoveingUnnecessaryCharactersList = [word for word in textRemoveingUnnecessaryCharactersList if word is not None]
+        
+        stop_words = set(stopwords.words('english'))
+        
+        stop_words.update(['texthtml', 'html', 'server', "email", 'date']) # remove it if you need punctuation and add new remove words
     
-        textAfterStopwordsRemovingList = [word for word in textRemoveingUnnecessaryCharactersList if word not in stopwords.words('english')] #remove stopwords
+        textAfterStopwordsRemovingList = [word for word in textRemoveingUnnecessaryCharactersList if word not in stop_words] #remove stopwords
 
         stemmer = PorterStemmer() #stemming
         
