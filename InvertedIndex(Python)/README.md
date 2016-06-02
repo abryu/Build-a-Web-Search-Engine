@@ -287,7 +287,8 @@ thing    (58),
 workshop    (58),
 environ    (58),
 
-### Top 200 frqeuent words for Testing set.comput    (625),
+### Top 200 frqeuent words for Testing set.
+comput    (625),
 gmt    (411),
 system    (369),
 page    (361),
