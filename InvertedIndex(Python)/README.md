@@ -16,7 +16,7 @@
 
 ### nltk
 * NLTK is a leading platform for building Python programs to work with human language data.
-* from nltk.corpus import stopwords; imported and downloaded from nltk.corpus for checking and removeing stopwords
+* from nltk.corpus import stopwords; imported and downloaded from nltk.corpus for checking and removing stopwords
 * from nltk import PorterStemmer; imported PorterStemmer for stemming a single word
 * check nltk website (http://www.nltk.org/)
 
