@@ -3,13 +3,17 @@
 ## Requirements:
  * Preprocess the web page documents provided to select relevant terms to represent these documents.   *
  * All html tags should be cleaned, stop words be removed, and stemming be performed. 
+
 ## Libraries and APIs used:
+
 ### os
 * os (Miscellaneous operating system interfaces) imported to read, create and write files 
 * check os website (https://docs.python.org/2/library/os.html)
+
 ### re
 * re (Regular expression operations) imported to check strings see if they match certain patterns
 * check re website (https://docs.python.org/2/library/re.html)
+
 ### nltk
 * NLTK is a leading platform for building Python programs to work with human language data.
 * from nltk.corpus import stopwords; imported and downloaded from nltk.corpus for checking and removeing stopwords
@@ -75,9 +79,12 @@ def calculateWordsAppearInBothSetOrNot(r1,r2):
 ## Any problems I have encountered and solved, and lessons I have learned
 * Conversion between various data structures (List/Dictionary/Set)
 * Get cleaner result (Solved by analyzing the words appear in previous result and then clean the unreasonable words)
+
 ## Results:
+
 ### How many words are identified from the training set
 * There are totally 7646 words be identified in the training set.
+
 ### Present and discuss top 200 most frequent words identified
 comput    (1116),
 gmt    (848),
@@ -279,10 +286,13 @@ servic    (61),
 find    (61),
 modifi    (60),
 meet    (60),
+
 #### Example words that are not properly cleaned, e.g. sle"), il'-10, etc. Why were they difficult to get properly preprocessed? 
 * Not found. Because special characters are removed.
+
 #### How many words are identified from the test set?
 * There are totally 5251 words be identified.
+
 #### How many words appear in both the training set and the test set How many do not? 
 * Appear in both: 3027 Not appear in one doc: 4618.
 
