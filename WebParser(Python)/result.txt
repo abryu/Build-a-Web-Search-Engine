@@ -1,5 +1,4 @@
 comput    (1116),
-gmt    (848),
 page    (812),
 scienc    (726),
 system    (660),
@@ -198,10 +197,10 @@ academ    (57),
 exampl    (57),
 scheme    (57),
 info    (57),
+make    (57),
 Above is the top 200 most frequent words
-There are totally 7478 words be identified.
+There are totally 7477 words be identified.
 comput    (625),
-gmt    (411),
 system    (369),
 page    (361),
 scienc    (322),
@@ -400,6 +399,7 @@ look    (32),
 access    (32),
 eicken    (31),
 practic    (31),
+nation    (31),
 Above is the top 200 most frequent words
-There are totally 5134 words be identified.
-Appear in both: 2939 Not appear in one doc: 4538
+There are totally 5133 words be identified.
+Appear in both: 2938 Not appear in one doc: 4538
