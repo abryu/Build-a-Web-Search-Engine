@@ -4,6 +4,10 @@
  * Preprocess the web page documents provided to select relevant terms to represent these documents.   
  * All html tags should be cleaned, stop words be removed, and stemming be performed. 
 
+## Tools Used:
+* Language: Python.
+* Built on Spyder.
+
 ## Libraries and APIs used:
 
 ### os
@@ -28,24 +32,28 @@ def openAndProcessingFiles(path,resultDict):  # Main Function
 
     for filename in os.listdir(os.getcwd()+path):
 
-        thisFile = open(os.getcwd()+path+'/'+filename,'r') #open the file and process each file
+        thisFile = open(os.getcwd()+path+'/'+filename,'r') # open the file and process each file
         
-        currentTextString = " ".join(thisFile.read().split())#store the file as a string for removing HTML tags
+        currentTextString = " ".join(thisFile.read().split()) # store the file as a string for removing HTML tags
         
         textAfterHtmlRemovingString = re.sub('<[^>]*>', '', currentTextString) # remove HTML tags (String)
         
-        textAfterHtmlRemovingList = textAfterHtmlRemovingString.split() # convert String to List for the text contains only characters
+        textAfterHtmlRemovingList = textAfterHtmlRemovingString.split() 
+        # convert String to List for the text contains only characters
         
-        textRemoveingUnnecessaryCharactersList = [removeUnnecessaryCharacters(word) for word in textAfterHtmlRemovingList ] 
+        textRemoveingUnnecessaryCharactersList = \ 
+        [removeUnnecessaryCharacters(word) for word in textAfterHtmlRemovingList ] 
 
-        textRemoveingUnnecessaryCharactersList = [word for word in textRemoveingUnnecessaryCharactersList if word is not None]
+        textRemoveingUnnecessaryCharactersList = \
+        [word for word in textRemoveingUnnecessaryCharactersList if word is not None]
         
         stop_words = set(stopwords.words('english'))
         
         stop_words.update(['texthtml', 'html', 'server', "email", 'date', 'info']) 
         # By analying the previous result set, continully adding new stopwords words
     
-        textAfterStopwordsRemovingList = [word for word in textRemoveingUnnecessaryCharactersList if word not in stop_words] #remove stopwords
+        textAfterStopwordsRemovingList = \
+        [word for word in textRemoveingUnnecessaryCharactersList if word not in stop_words] #remove stopwords
 
         stemmer = PorterStemmer() #stemming
         
@@ -69,7 +77,8 @@ def removeUnnecessaryCharacters(word):
 ### Sort and display dictionaries
 ```python
 def formatAndPrintResultDict(resultDict,destFile,rFile):
-    resultList= sorted(resultDict.iteritems(), key=lambda frequency:frequency[1], reverse = True) # sort the dict based on the value (frequency)
+    resultList= sorted(resultDict.iteritems(), key=lambda frequency:frequency[1], reverse = True) 
+    # sort the dict based on the value (frequency)
     count = 1    
     for eachTuple in resultList:
         destFile.write('<tr><td>'+eachTuple[0]+'</td><td>'+str(eachTuple[1])+'</td></tr>')
@@ -91,10 +100,17 @@ def calculateWordsAppearInBothSetOrNot(r1,r2):
     s2 = set([(eachTuple[0]) for eachTuple in r2])
     return len(s1&s2),len(s1-s2)
 ```
-## Any problems I have encountered and solved, and lessons I have learned
+## Any problems I have encountered and solved
 * Conversion between various data structures (List/Dictionary/Set)
-* Get cleaner result (Solved by analyzing the words appear in previous result and then clean the unreasonable words)
-* The order of processing procedures will affect the result.
+* Get cleaner result. (Solved by analyzing the words appear in previous result and then adding the unreasonable words to stopwords list) 
+* Diffierent ways to tokeize the text. i.e. replacing stopwords by space, None or others. (Solved by replacing by None)
+
+## Lessons I have learnt
+* Building web parser.
+* How to deal with dirty data/words.
+* Data pre-processing.
+* Data structures. List/Dictionary/Set for storing data and operations on those data.
+* Python features, syntax.
 
 ## Results:
 
@@ -514,6 +530,11 @@ practic    (31),
 #### How many words appear in both the training set and the test set How many do not? 
 * Appear in both: 3027 Not appear in one doc: 4618.
 
+#### Detailed result please check 
+(https://github.com/abryu/Build-a-Web-Search-Engine/blob/master/WebParser(Python)/result.txt) 
+(https://github.com/abryu/Build-a-Web-Search-Engine/blob/master/WebParser(Python)/destinationTestFile.html)
+(https://github.com/abryu/Build-a-Web-Search-Engine/blob/master/WebParser(Python)/destinationTrainingFile.html)
+
 
 #### References
 Python stopwords removing 
@@ -530,3 +551,6 @@ re
 
 dictionary sorting
 (http://stackoverflow.com/questions/72899/how-do-i-sort-a-list-of-dictionaries-by-values-of-the-dictionary-in-python)
+
+add new stopwords
+(http://stackoverflow.com/questions/19130512/stopword-removal-with-nltk)
