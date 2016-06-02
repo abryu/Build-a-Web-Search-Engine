@@ -24,9 +24,9 @@ def calculateWordsAppearInBothSetOrNot(r1,r2):
 def removeUnnecessaryCharacters(word):
     if '@' in word or 'www' in word: # eliminate email addresses and website addresses
         return None
-    newWord = "".join(re.findall("[a-zA-Z]+", word)) # contain only characters
-    if len(newWord) > 1 and len(newWord) < 15:
-        return newWord.lower()
+    newWord = "".join(re.findall("[a-zA-Z]+", word)).lower() # contain only characters
+    if len(newWord) > 2 and len(newWord) < 15:
+        return newWord
     else:
         return None
 
