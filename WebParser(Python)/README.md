@@ -12,6 +12,7 @@
 * Python programs are typically 3-5 times shorter than equivalent Java programs. This difference can be attributed to Python's built-in high-level data types and its dynamic typing. 
 
 ### Built on Spyder.
+* Spyder is an interactive Python development environment providing MATLAB-like features in a simple and light-weighted software. It also provides ready-to-use pure-Python widgets to your PyQt4 or PySide application: source code editor with syntax highlighting and code introspection/analysis features, NumPy array editor, dictionary editor, Python console, etc.
 
 ## Libraries and APIs used:
 
@@ -24,10 +25,14 @@
 * check re website (https://docs.python.org/2/library/re.html)
 
 ### nltk
-* NLTK is a leading platform for building Python programs to work with human language data.
-* from nltk.corpus import stopwords; imported and downloaded from nltk.corpus for checking and removing stopwords
-* from nltk import PorterStemmer; imported PorterStemmer for stemming a single word
-* check nltk website (http://www.nltk.org/)
+
+#### NLTK is a leading platform for building Python programs to work with human language data. (http://www.nltk.org/)
+
+#### from nltk.corpus import stopwords; imported and downloaded from nltk.corpus for checking and removing stopwords
+*  Stop words are basically a set of commonly used words in any language, not just English. The reason why stop words are critical to many applications is that, if we remove the words that are very commonly used in a given language, we can focus on the important words instead.
+
+#### from nltk import PorterStemmer; imported PorterStemmer for stemming a single word
+* Stemming is the process for reducing inflected (or sometimes derived) words to their stem, base or root form—generally a written word form. 
 
 ## Review the key parts of code
 
@@ -561,11 +566,19 @@ Python Advantages
 (https://www.python.org/doc/essays/comparisons/)
 (https://en.wikiversity.org/wiki/Python/Why_learn_Python)
 
+More about Spyder
+(https://pythonhosted.org/spyder/overview.html)
+
+Stopwords
+(http://nlp.stanford.edu/IR-book/html/htmledition/dropping-common-terms-stop-words-1.html)
+
 Python stopwords removing 
 (http://stackoverflow.com/questions/5486337/how-to-remove-stop-words-using-nltk-or-python)
 
 Stemming
 (http://stackoverflow.com/questions/10369393/need-a-python-module-for-stemming-of-text-documents)
+(http://www.nltk.org/api/nltk.stem.html)
+(http://textminingonline.com/dive-into-nltk-part-iv-stemming-and-lemmatization)
 
 os
 (https://docs.python.org/2/library/os.html)
