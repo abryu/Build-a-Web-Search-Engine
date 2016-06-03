@@ -105,6 +105,14 @@ def calculateWordsAppearInBothSetOrNot(r1,r2):
     s2 = set([(eachTuple[0]) for eachTuple in r2])
     return len(s1&s2),len(s1-s2)
 ```
+### Store processed words/terms to result dict
+```python
+def storeToResultDict(word,resultDict):
+    if resultDict.has_key(word): #this word exists, update the value =+ 1
+        resultDict[word] = resultDict.get(word)+1
+    else: # this word doesnt exist, add this word as a key and value = 1
+        resultDict[word] = 1
+```
 ## Any problems I have encountered and solved
 * Conversion between various data structures (List/Dictionary/Set)
 * Get cleaner result. (Solved by analyzing the words appear in previous result and then adding the unreasonable words to stopwords list) 
