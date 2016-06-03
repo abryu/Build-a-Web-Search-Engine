@@ -5,8 +5,13 @@
  * All html tags should be cleaned, stop words be removed, and stemming be performed. 
 
 ## Tools Used:
-* Language: Python.
-* Built on Spyder.
+### Language: Python.
+#### Why I use Python rather than Java?
+* Easy syntax and readibility.
+* Python programs are generally expected to run slower than Java programs, but they also take much less time to develop. 
+* Python programs are typically 3-5 times shorter than equivalent Java programs. This difference can be attributed to Python's built-in high-level data types and its dynamic typing. 
+
+### Built on Spyder.
 
 ## Libraries and APIs used:
 
@@ -104,6 +109,7 @@ def calculateWordsAppearInBothSetOrNot(r1,r2):
 * Conversion between various data structures (List/Dictionary/Set)
 * Get cleaner result. (Solved by analyzing the words appear in previous result and then adding the unreasonable words to stopwords list) 
 * Diffierent ways to tokeize the text. i.e. replacing stopwords by space, None or others. (Solved by replacing by None)
+* Handle special characters. (Solved by removing strings that contain special characters. Because those strings are meaningless)
 
 ## Lessons I have learnt
 * Building web parser.
@@ -542,6 +548,11 @@ nation    (31),
 
 
 #### References
+
+Python Advantages
+(https://www.python.org/doc/essays/comparisons/)
+(https://en.wikiversity.org/wiki/Python/Why_learn_Python)
+
 Python stopwords removing 
 (http://stackoverflow.com/questions/5486337/how-to-remove-stop-words-using-nltk-or-python)
 
